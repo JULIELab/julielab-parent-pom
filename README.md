@@ -14,3 +14,7 @@ You can define a default profile to be used by adding it to your <tt>settings.xm
       </activeProfiles>
       
 Please be careful when using the *sonatype-nexus-deployment* profile as a default. Artefacts which have been deployed to Sonatype unintentionally are not easily deleted. It is safer to use the internal repository as a default deployment target and just create project-specific exceptions where required.
+
+For convenience, an alias could be defined, for example like this:
+
+    alias deploytosonatype="mvn clean deploy -P sonatype-nexus-deployment"
