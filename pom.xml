@@ -208,22 +208,6 @@
 		</plugins>
 	</reporting>
 
-	<!-- Environment Settings -->
-	<repositories>
-		<repository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-
 	<scm>
 		<connection>scm:git:git://github.com/JULIELab/julielab-parent-pom.git</connection>
 		<developerConnection>scm:git:git://github.com/JULIELab/julielab-parent-pom.git</developerConnection>
