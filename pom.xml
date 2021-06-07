@@ -4,7 +4,7 @@
     <!-- Basics & Project Information -->
     <groupId>de.julielab</groupId>
     <artifactId>julielab-parent</artifactId>
-    <version>2.4.1</version>
+    <version>2.5.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>JULIE Lab Parent POM</name>
     <description>The Parent POM for all JULIE Lab projects.</description>
@@ -29,6 +29,7 @@
     <properties>
         <slf4j-version>1.7.30</slf4j-version>
         <logback-version>1.2.3</logback-version>
+        <junit-version>5.7.2</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -79,7 +80,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -107,27 +108,58 @@
                 <version>${logback-version}</version>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.13</version>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>${junit-version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+           <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-migationsupport</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.1.0</version>
+                <version>7.4.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.16.1</version>
+                <version>3.19.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.10</version>
+                <version>3.12.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -166,6 +198,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <!-- Version set in pluginManagement below -->
                 <configuration>
                     <doclint>none</doclint>
                 </configuration>
@@ -182,6 +215,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <!-- Version set in pluginManagement below -->
                 <configuration>
                     <properties>
                         <property>
@@ -203,7 +237,7 @@
                 <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.0</version>
             </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -223,7 +257,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.9.0</version>
                 <configuration>
                     <source>11</source>
                     <target>11</target>
